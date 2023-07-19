@@ -10,6 +10,7 @@ describe("Object Type Alias", () => {
             price: 14000000,
             stock: 29,
             category: category,
+            description: "Ini Produk Bagus",
         };
         product.id = "2";
         console.info(category);
