@@ -1,5 +1,5 @@
 import { AddFunction } from "../src/function-interface";
-import { stringArray } from "../src/indexable-interface";
+import { stringArray, stringIndexArray } from "../src/indexable-interface";
 import { Seller } from "../src/seller";
 
 describe("Interface Typescript", () => {
@@ -22,6 +22,16 @@ describe("Interface Typescript", () => {
   });
   it("should support indexable interface", () => {
     const names: stringArray = ["Marcel", "Dwi", "Astika"];
-    console.info(names);
+    expect(names[0]).toBe("Marcel");
+    expect(names[1]).toBe("Dwi");
+    expect(names[2]).toBe("Astika");
+  });
+  it("should support string index interface", () => {
+    const dictionary: stringIndexArray = {
+      name: "Marcel",
+      address: "Mojokerto",
+    };
+    expect(dictionary.name).toBe("Marcel");
+    expect(dictionary.address).toBe("Mojokerto");
   });
 });

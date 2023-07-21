@@ -18,7 +18,17 @@ describe("Interface Typescript", () => {
     });
     it("should support indexable interface", () => {
         const names = ["Marcel", "Dwi", "Astika"];
-        console.info(names);
+        expect(names[0]).toBe("Marcel");
+        expect(names[1]).toBe("Dwi");
+        expect(names[2]).toBe("Astika");
+    });
+    it("should support string index interface", () => {
+        const dictionary = {
+            name: "Marcel",
+            address: "Mojokerto",
+        };
+        expect(dictionary.name).toBe("Marcel");
+        expect(dictionary.address).toBe("Mojokerto");
     });
 });
 export {};
