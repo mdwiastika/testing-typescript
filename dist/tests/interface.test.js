@@ -30,5 +30,17 @@ describe("Interface Typescript", () => {
         expect(dictionary.name).toBe("Marcel");
         expect(dictionary.address).toBe("Mojokerto");
     });
+    it("should support extends interface", () => {
+        const employee1 = {
+            id: 1,
+            name: "Marcel Dwi Astika",
+            division: "Production",
+            numberOFEmployees: 100,
+        };
+        expect(employee1.id).toBe(1);
+        expect(employee1.name).toBe("Marcel Dwi Astika");
+        expect(employee1.division).toBe("Production");
+        expect(employee1.numberOFEmployees).toBe(100);
+    });
 });
 export {};

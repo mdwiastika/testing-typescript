@@ -1,3 +1,4 @@
+import { Manager } from "../src/employee";
 import { AddFunction } from "../src/function-interface";
 import { stringArray, stringIndexArray } from "../src/indexable-interface";
 import { Seller } from "../src/seller";
@@ -33,5 +34,17 @@ describe("Interface Typescript", () => {
     };
     expect(dictionary.name).toBe("Marcel");
     expect(dictionary.address).toBe("Mojokerto");
+  });
+  it("should support extends interface", () => {
+    const employee1: Manager = {
+      id: 1,
+      name: "Marcel Dwi Astika",
+      division: "Production",
+      numberOFEmployees: 100,
+    };
+    expect(employee1.id).toBe(1);
+    expect(employee1.name).toBe("Marcel Dwi Astika");
+    expect(employee1.division).toBe("Production");
+    expect(employee1.numberOFEmployees).toBe(100);
   });
 });
