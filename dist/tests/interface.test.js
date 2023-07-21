@@ -45,12 +45,12 @@ describe("Interface Typescript", () => {
     it("should support function in interface", () => {
         const person = {
             name: "Marcel Dwi Astika",
-            sayHello: (name) => {
-                return `Halo ${name}`;
+            sayHello: function (name) {
+                return `Hello ${name}, my name is ${this.name}`;
             },
         };
         expect(person.name).toBe("Marcel Dwi Astika");
-        expect(person.sayHello("Marcel")).toBe("Halo Marcel");
+        expect(person.sayHello("Doni")).toBe("Hello Doni, my name is Marcel Dwi Astika");
     });
 });
 export {};
