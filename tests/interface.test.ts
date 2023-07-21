@@ -58,6 +58,7 @@ describe("Interface Typescript", () => {
         return `Hello ${name}, my name is ${this.name}`;
       },
     };
+    console.info(person);
     expect(person.name).toBe("Marcel Dwi Astika");
     expect(person.sayHello("Doni")).toBe("Hello Doni, my name is Marcel Dwi Astika");
   });
