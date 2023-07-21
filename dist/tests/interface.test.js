@@ -16,5 +16,9 @@ describe("Interface Typescript", () => {
         };
         expect(add(3, 7)).toBe(10);
     });
+    it("should support indexable interface", () => {
+        const names = ["Marcel", "Dwi", "Astika"];
+        console.info(names);
+    });
 });
 export {};

@@ -1,4 +1,5 @@
 import { AddFunction } from "../src/function-interface";
+import { stringArray } from "../src/indexable-interface";
 import { Seller } from "../src/seller";
 
 describe("Interface Typescript", () => {
@@ -18,5 +19,9 @@ describe("Interface Typescript", () => {
       return number1 + number2;
     };
     expect(add(3, 7)).toBe(10);
+  });
+  it("should support indexable interface", () => {
+    const names: stringArray = ["Marcel", "Dwi", "Astika"];
+    console.info(names);
   });
 });
