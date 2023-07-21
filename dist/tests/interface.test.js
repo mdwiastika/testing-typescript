@@ -42,5 +42,15 @@ describe("Interface Typescript", () => {
         expect(employee1.division).toBe("Production");
         expect(employee1.numberOFEmployees).toBe(100);
     });
+    it("should support function in interface", () => {
+        const person = {
+            name: "Marcel Dwi Astika",
+            sayHello: (name) => {
+                return `Halo ${name}`;
+            },
+        };
+        expect(person.name).toBe("Marcel Dwi Astika");
+        expect(person.sayHello("Marcel")).toBe("Halo Marcel");
+    });
 });
 export {};
