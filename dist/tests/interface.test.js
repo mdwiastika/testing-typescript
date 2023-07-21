@@ -14,7 +14,7 @@ describe("Interface Typescript", () => {
         const add = (number1, number2) => {
             return number1 + number2;
         };
-        console.info(add(3, 7));
+        expect(add(3, 7)).toBe(10);
     });
 });
 export {};
