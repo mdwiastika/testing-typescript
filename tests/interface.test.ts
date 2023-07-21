@@ -1,3 +1,4 @@
+import { AddFunction } from "../src/function-interface";
 import { Seller } from "../src/seller";
 
 describe("Interface Typescript", () => {
@@ -11,5 +12,11 @@ describe("Interface Typescript", () => {
     seller.name = "Susanto";
     // seller.nip = "018212"; //error karena readonly property
     console.info(seller);
+  });
+  it("should support interface function", () => {
+    const add: AddFunction = (number1: number, number2: number) => {
+      return number1 + number2;
+    };
+    console.info(add(3, 7));
   });
 });
