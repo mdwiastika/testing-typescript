@@ -1,6 +1,7 @@
 import { Manager } from "../src/employee";
 import { AddFunction } from "../src/function-interface";
 import { stringArray, stringIndexArray } from "../src/indexable-interface";
+import { Person } from "../src/person";
 import { Seller } from "../src/seller";
 
 describe("Interface Typescript", () => {
@@ -48,10 +49,6 @@ describe("Interface Typescript", () => {
     expect(employee1.numberOFEmployees).toBe(100);
   });
   it("should support function in interface", () => {
-    interface Person {
-      name: string;
-      sayHello(name: string): string;
-    }
     const person: Person = {
       name: "Marcel Dwi Astika",
       sayHello: function (name: string): string {
@@ -76,5 +73,14 @@ describe("Interface Typescript", () => {
     };
     expect(domain.id).toBe(1);
     expect(domain.name).toBe("Marcel");
+  });
+  it("should support assertion type", () => {
+    const person: any = {
+      id: 1,
+      name: "Marcel Dwi Astika",
+    };
+    const person2: Person = person as Person;
+    person2.sayHello("Budi");
+    console.info(person2);
   });
 });

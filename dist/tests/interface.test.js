@@ -61,5 +61,14 @@ describe("Interface Typescript", () => {
         expect(domain.id).toBe(1);
         expect(domain.name).toBe("Marcel");
     });
+    it("should support assertion type", () => {
+        const person = {
+            id: 1,
+            name: "Marcel Dwi Astika",
+        };
+        const person2 = person;
+        person2.sayHello("Budi");
+        console.info(person2);
+    });
 });
 export {};
