@@ -62,4 +62,19 @@ describe("Interface Typescript", () => {
     expect(person.name).toBe("Marcel Dwi Astika");
     expect(person.sayHello("Doni")).toBe("Hello Doni, my name is Marcel Dwi Astika");
   });
+  it("should support intersection types", () => {
+    interface hasName {
+      name: string;
+    }
+    interface hasId {
+      id: number;
+    }
+    type Domain = hasId & hasName;
+    const domain: Domain = {
+      id: 1,
+      name: "Marcel",
+    };
+    expect(domain.id).toBe(1);
+    expect(domain.name).toBe("Marcel");
+  });
 });
