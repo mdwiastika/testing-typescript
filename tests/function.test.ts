@@ -28,4 +28,26 @@ describe("funstion testing", () => {
     expect(sayHello("Marcel")).toBe("Hello Marcel");
     expect(sayHello("Marcel", "Dwi")).toBe("Hello Marcel Dwi");
   });
+  it("should support overloading function", () => {
+    function callMe(value: string): string;
+    function callMe(value: number): number;
+    function callMe(value: any): any {
+      if (typeof value === "string") {
+        return value.toUpperCase();
+      } else if (typeof value === "number") {
+        return value * 2;
+      }
+    }
+    expect(callMe("marcel")).toBe("MARCEL");
+    expect(callMe(100)).toBe(200);
+  });
+  it("should support function as parameter", () => {
+    function sayHello(name: string, filter: (name: string) => string): string {
+      return `Hello ${filter(name)}`;
+    }
+    function uppperAlpha(value: string): string {
+      return value.toUpperCase();
+    }
+    expect(sayHello("Marcel Dwi Astika", uppperAlpha)).toBe("Hello MARCEL DWI ASTIKA");
+  });
 });
